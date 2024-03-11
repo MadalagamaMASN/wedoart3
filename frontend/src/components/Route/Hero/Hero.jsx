@@ -7,7 +7,8 @@ const Hero = () => {
     <div
       className={`relative min-h-[70vh] 800px:min-h-[80vh] w-full bg-no-repeat ${styles.noramlFlex}`}
       style={{
-        backgroundImage: "url(https://img.hotimg.com/New-Project-5.png)",
+        backgroundImage:
+          "url(https://i.postimg.cc/3RcMDg8c/New-Project-15.png)",
       }}
     >
       <div

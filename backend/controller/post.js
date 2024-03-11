@@ -2,7 +2,7 @@ const express = require("express");
 const { isSeller, isAuthenticated, isAdmin } = require("../middleware/auth");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const router = express.Router();
-const post = require("../model/post");
+const Post = require("../model/post");
 const Order = require("../model/order");
 const Shop = require("../model/shop");
 const cloudinary = require("cloudinary");
@@ -50,6 +50,40 @@ router.post(
           post,
         });
       }
+    } catch (error) {
+      return next(new ErrorHandler(error, 400));
+    }
+  })
+);
+
+// get all posts of a shop
+router.get(
+  "/get-all-posts-shop/:id",
+  catchAsyncErrors(async (req, res, next) => {
+    try {
+      const posts = await Post.find({ shopId: req.params.id });
+
+      res.status(201).json({
+        success: true,
+        posts,
+      });
+    } catch (error) {
+      return next(new ErrorHandler(error, 400));
+    }
+  })
+);
+
+// get all posts
+router.get(
+  "/get-all-posts",
+  catchAsyncErrors(async (req, res, next) => {
+    try {
+      const posts = await Post.find().sort({ createdAt: -1 });
+
+      res.status(201).json({
+        success: true,
+        posts,
+      });
     } catch (error) {
       return next(new ErrorHandler(error, 400));
     }

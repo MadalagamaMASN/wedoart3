@@ -14,14 +14,30 @@ const AdminHeader = () => {
       <div>
         <Link to="/">
           <img
-            src=""
+            src="https://img.hotimg.com/New-Project-269674ab2d6dadbab.png"
             alt=""
           />
         </Link>
       </div>
-      <div className="flex items-center">
+     <div className="flex items-center">
+    
         <div className="flex items-center mr-4">
-          <Link to="/dashboard/cupouns" className="800px:block hidden">
+          
+          
+            <img
+              src={`${user?.avatar?.url}`}
+              alt=""
+              className="w-[50px] h-[50px] rounded-full object-cover"
+            />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default AdminHeader
+/*
+<Link to="/dashboard/cupouns" className="800px:block hidden">
             <AiOutlineGift
               color="#555"
               size={30}
@@ -52,15 +68,4 @@ const AdminHeader = () => {
               className="mx-5 cursor-pointer"
             />
           </Link>
-            <img
-              src={`${user?.avatar?.url}`}
-              alt=""
-              className="w-[50px] h-[50px] rounded-full object-cover"
-            />
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default AdminHeader
+*/

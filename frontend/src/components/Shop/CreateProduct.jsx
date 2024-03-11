@@ -65,6 +65,13 @@ const CreateProduct = () => {
     newForm.append("discountPrice", discountPrice);
     newForm.append("stock", stock);
     newForm.append("shopId", seller._id);
+
+    // Log the submit data before passing to the server
+    console.log("Submit Data:");
+    console.log("Images:", images);
+    console.log("Description:", description);
+    console.log("Shop ID:", seller._id);
+   
     dispatch(
       createProduct({
         name,
@@ -83,7 +90,7 @@ const CreateProduct = () => {
   return (
     <div className="w-[90%] 800px:w-[50%] bg-white  shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">
       <h5 className="text-[30px] font-Poppins text-center">Create Product</h5>
-      {/* create product form */}
+      {/* form to create product */}
       <form onSubmit={handleSubmit}>
         <br />
         <div>

@@ -1,8 +1,10 @@
 import ShopDashboardPage from "../pages/Shop/ShopDashboardPage";
 import ShopCreateProduct from "../pages/Shop/ShopCreateProduct";
 import ShopCreatePost from "../pages/Shop/ShopCreatePost";
+import ShopCreateBlog from "../pages/Shop/ShopCreateBlog";
 import ShopAllProducts from "../pages/Shop/ShopAllProducts";
 import ShopAllPosts from "../pages/Shop/ShopAllPosts";
+import ShopAllBlogs from "../pages/Shop/ShopAllBlogs";
 import ShopCreateEvents from "../pages/Shop/ShopCreateEvents";
 import ShopAllEvents from "../pages/Shop/ShopAllEvents";
 import ShopAllCoupouns from "../pages/Shop/ShopAllCoupouns";
@@ -18,9 +20,11 @@ export {
     ShopDashboardPage,
     ShopCreateProduct,
     ShopCreatePost,
+    ShopCreateBlog,
     ShopAllProducts,
     ShopCreateEvents,
     ShopAllPosts,
+    ShopAllBlogs,
     ShopAllEvents,
     ShopAllCoupouns,
     ShopPreviewPage,

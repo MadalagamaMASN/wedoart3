@@ -2,16 +2,21 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getAllProductsShop } from "../../redux/actions/product";
-//import { getAllPostsShop } from "../../redux/actions/post";
+import { getAllPostsShop } from "../../redux/actions/post";
+import { getAllBlogsShop } from "../../redux/actions/blog";
 import styles from "../../styles/styles";
 import ProductCard from "../Route/ProductCard/ProductCard";
+import PostCard from "../Route/PostCard/PostCard";
+import BlogCard from "../Route/BlogCard/BlogCard";
 import Ratings from "../Products/Ratings";
 import { getAllEventsShop } from "../../redux/actions/event";
+import { blogData } from "../../static/data";
 
 const ShopProfileData = ({ isOwner }) => {
   const { products } = useSelector((state) => state.products);
-  //const { posts } = useSelector((state) => state.posts);
+  const { posts } = useSelector((state) => state.posts);
   const { events } = useSelector((state) => state.events);
+  //const { blogs } = useSelector((state) => state.blogs);
   const { id } = useParams();
   const dispatch = useDispatch();
 
@@ -20,43 +25,65 @@ const ShopProfileData = ({ isOwner }) => {
     dispatch(getAllEventsShop(id));
   }, [dispatch]);
 
-  const [active, setActive] = useState(1);
+  useEffect(() => {
+    dispatch(getAllPostsShop(id));
+  }, [dispatch, id]);
+
+  const [active, setActive] = useState(5);
 
   const allReviews =
     products && products.map((product) => product.reviews).flat();
 
   return (
-    <div className="w-full">
-      <div className="flex w-full items-center justify-between">
+    <div className="w-ful ">
+      <div className="flex w-full items-center justify-between ">
         <div className="w-full flex">
-          
+          <div className="flex items-center" onClick={() => setActive(5)}>
+            <h5
+              className={`font-[600] text-[15px] ${
+                active === 5 ? "text-red-500" : "text-[#333]"
+              } cursor-pointer pr-[20px]`}
+            >
+              Portfolio
+            </h5>
+          </div>
+
+          <div className="flex items-center" onClick={() => setActive(7)}>
+            <h5
+              className={`font-[600] text-[15px] ${
+                active === 7 ? "text-red-500" : "text-[#333]"
+              } cursor-pointer pr-[20px]`}
+            >
+              Blog
+            </h5>
+          </div>
 
           <div className="flex items-center" onClick={() => setActive(1)}>
             <h5
-              className={`font-[600] text-[20px] ${
+              className={`font-[600] text-[15px] ${
                 active === 1 ? "text-red-500" : "text-[#333]"
               } cursor-pointer pr-[20px]`}
             >
-              Shop Products
+              Shop
             </h5>
           </div>
           <div className="flex items-center" onClick={() => setActive(2)}>
             <h5
-              className={`font-[600] text-[20px] ${
+              className={`font-[600] text-[15px] ${
                 active === 2 ? "text-red-500" : "text-[#333]"
               } cursor-pointer pr-[20px]`}
             >
-              Running Events
+              Events
             </h5>
           </div>
 
           <div className="flex items-center" onClick={() => setActive(3)}>
             <h5
-              className={`font-[600] text-[20px] ${
+              className={`font-[600] text-[15px] ${
                 active === 3 ? "text-red-500" : "text-[#333]"
               } cursor-pointer pr-[20px]`}
             >
-              Shop Reviews
+              Reviews
             </h5>
           </div>
         </div>
@@ -75,10 +102,21 @@ const ShopProfileData = ({ isOwner }) => {
 
       <br />
 
-    
+      {active === 5 && (
+        <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-3 lg:gap-[25px] xl:grid-cols-4 xl:gap-[20px] mb-12 border-0">
+          {posts &&
+            posts.map((i, index) => (
+              <PostCard data={i} key={index} isShop={true} />
+            ))}
+        </div>
+      )}
+
+      {active === 7 && (
+        <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-3 lg:gap-[25px] xl:grid-cols-4 xl:gap-[20px] mb-12 border-0"></div>
+      )}
 
       {active === 1 && (
-        <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-3 lg:gap-[25px] xl:grid-cols-4 xl:gap-[20px] mb-12 border-0">
+        <div className="grid grid-cols-1 gap-[10px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-3 lg:gap-[25px] xl:grid-cols-4 xl:gap-[10px] mb-12 border-0">
           {products &&
             products.map((i, index) => (
               <ProductCard data={i} key={index} isShop={true} />

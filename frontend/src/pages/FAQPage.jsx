@@ -36,7 +36,7 @@ const Faq = () => {
             onClick={() => toggleTab(2)}
           >
             <span className="text-lg font-medium text-gray-900">
-              What is your return policy?
+            How can I become a seller on wedoart.lk?
             </span>
             {activeTab === 2 ? (
               <svg
@@ -71,10 +71,7 @@ const Faq = () => {
           {activeTab === 2 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                If you're not satisfied with your purchase, we accept returns
-                within 30 days of delivery. To initiate a return, please email
-                us at support@myecommercestore.com with your order number and a
-                brief explanation of why you're returning the item.
+              To become a seller on wedoart.lk, simply navigate to the "Sell with Us" section on our platform and follow the easy registration process. Once approved, you can start showcasing and selling your unique arts and crafts to a wider audience.
               </p>
             </div>
           )}
@@ -86,7 +83,7 @@ const Faq = () => {
             onClick={() => toggleTab(3)}
           >
             <span className="text-lg font-medium text-gray-900">
-              How do I track my order?
+            What types of arts and crafts are accepted on wedoart.lk?
             </span>
             {activeTab === 3 ? (
               <svg
@@ -121,9 +118,8 @@ const Faq = () => {
           {activeTab === 3 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                You can track your order by clicking the tracking link in your
-                shipping confirmation email, or by logging into your account on
-                our website and viewing the order details.
+              We welcome a diverse range of arts and crafts, including paintings, sculptures, handmade jewelry, textiles, and more. As long as your creations are original and reflect artistic quality, we encourage you to join our vibrant community.
+
               </p>
             </div>
           )}
@@ -135,7 +131,7 @@ const Faq = () => {
             onClick={() => toggleTab(4)}
           >
             <span className="text-lg font-medium text-gray-900">
-              How do I contact customer support?
+            How does the payment process work for sellers?
             </span>
             {activeTab === 4 ? (
               <svg
@@ -170,9 +166,7 @@ const Faq = () => {
           {activeTab === 4 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                You can contact our customer support team by emailing us at
-                support@myecommercestore.com, or by calling us at (555) 123-4567
-                between the hours of 9am and 5pm EST, Monday through Friday.
+              Our platform utilizes a secure payment gateway to facilitate transactions. When a customer makes a purchase, the payment is securely processed, and your earnings are credited to your wedoart.lk seller account. Payouts are then conveniently transferred to your designated bank account.
               </p>
             </div>
           )}
@@ -184,7 +178,7 @@ const Faq = () => {
             onClick={() => toggleTab(5)}
           >
             <span className="text-lg font-medium text-gray-900">
-              Can I change or cancel my order?
+            Can I customize my vendor profile on wedoart.lk?
             </span>
             {activeTab === 5 ? (
               <svg
@@ -219,10 +213,7 @@ const Faq = () => {
           {activeTab === 5 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                Unfortunately, once an order has been placed, we are not able to
-                make changes or cancellations. If you no longer want the items
-                you've ordered, you can return them for a refund within 30 days
-                of delivery.
+              Absolutely! We believe in showcasing the individuality of each artist. Sellers have the freedom to personalize their vendor profiles with bios, portfolio highlights, and social media links. This allows you to connect with your customers on a more personal level.
               </p>
             </div>
           )}
@@ -234,7 +225,7 @@ const Faq = () => {
             onClick={() => toggleTab(6)}
           >
             <span className="text-lg font-medium text-gray-900">
-              Do you offer international shipping?
+            How does wedoart.lk handle shipping and delivery?
             </span>
             {activeTab === 6 ? (
               <svg
@@ -269,7 +260,7 @@ const Faq = () => {
           {activeTab === 6 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                Currently, we only offer shipping within the United States.
+              Sellers have the flexibility to choose their preferred shipping methods and set shipping rates. You can specify shipping policies, including processing times and delivery estimates. Customers are provided with tracking information to monitor the status of their orders.
               </p>
             </div>
           )}
@@ -281,7 +272,7 @@ const Faq = () => {
             onClick={() => toggleTab(7)}
           >
             <span className="text-lg font-medium text-gray-900">
-              What payment methods do you accept?
+            What support does wedoart.lk offer to its sellers?
             </span>
             {activeTab === 7 ? (
               <svg
@@ -316,8 +307,7 @@ const Faq = () => {
           {activeTab === 7 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                We accept visa,mastercard,paypal payment method also we have
-                cash on delivery system.
+              We are committed to supporting our sellers every step of the way. wedoart.lk provides resources such as seller guides, marketing tips, and customer service assistance. Additionally, we organize regular webinars and events to foster collaboration and growth within our community.
               </p>
             </div>
           )}

@@ -3,6 +3,8 @@ import AdminDashboardUsers from "../pages/AdminDashboardUsers";
 import AdminDashboardSellers from "../pages/AdminDashboardSellers";
 import AdminDashboardOrders from "../pages/AdminDashboardOrders";
 import AdminDashboardProducts from "../pages/AdminDashboardProducts";
+import AdminDashboardPosts from "../pages/AdminDashboardPosts";
+import AdminDashboardBlogs from "../pages/AdminDashboardBlogs";
 import AdminDashboardEvents from "../pages/AdminDashboardEvents";
 import AdminDashboardWithdraw from "../pages/AdminDashboardWithdraw";
 
@@ -12,6 +14,8 @@ export {
   AdminDashboardSellers,
   AdminDashboardOrders,
   AdminDashboardProducts,
+  AdminDashboardPosts,
+  AdminDashboardBlogs,
   AdminDashboardEvents,
   AdminDashboardWithdraw
 };

@@ -4,9 +4,10 @@ import { server } from "../../server";
 // create post
 export const createPost =
   (
+    images,
     description,
     shopId,
-    images
+    
   ) =>
   async (dispatch) => {
     try {
@@ -16,10 +17,10 @@ export const createPost =
 
       const { data } = await axios.post(
         `${server}/post/create-post`,
-        
+        images,
         description,
         shopId,
-        images,
+        
       );
       dispatch({
         type: "postCreateSuccess",

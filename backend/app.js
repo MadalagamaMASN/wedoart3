@@ -5,18 +5,23 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-app.use(cors({
-  origin: ['http://localhost:3000',],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+);
 
-app.use(express.json());
+//app.use(express.json());
+app.use(express.json({ limit: '50mb' }));
+
 app.use(cookieParser());
 app.use("/test", (req, res) => {
   res.send("Hello world!");
 });
 
-app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
+//app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
+//app.use(bodyParser.json({ limit: '50mb' }));
 
 // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
@@ -29,6 +34,8 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 const user = require("./controller/user");
 const shop = require("./controller/shop");
 const product = require("./controller/product");
+const post = require("./controller/post");
+const blog = require("./controller/blog");
 const event = require("./controller/event");
 const coupon = require("./controller/coupounCode");
 const payment = require("./controller/payment");
@@ -43,6 +50,8 @@ app.use("/api/v2/message", message);
 app.use("/api/v2/order", order);
 app.use("/api/v2/shop", shop);
 app.use("/api/v2/product", product);
+app.use("/api/v2/post", post);
+app.use("/api/v2/blog", blog);
 app.use("/api/v2/event", event);
 app.use("/api/v2/coupon", coupon);
 app.use("/api/v2/payment", payment);

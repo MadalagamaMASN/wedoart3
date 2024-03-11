@@ -10,7 +10,7 @@ const CreatePost = () => {
   const { success, error } = useSelector((state) => state.products);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  
   const [images, setImages] = useState([]);
   const [description, setDescription] = useState("");
 
@@ -53,11 +53,20 @@ const CreatePost = () => {
     });
     newForm.append("description", description);
     newForm.append("shopId", seller._id);
+
+     // Log the submit data before passing to the server
+     console.log("Submit Data:");
+     console.log("Description:", description);
+     console.log("Images:", images);
+     console.log("Shop ID:", seller._id);
+
+
     dispatch(
       createPost({
         description,
-        shopId: seller._id,
         images,
+        shopId: seller._id,
+        
       })
     );
   };

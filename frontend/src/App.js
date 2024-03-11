@@ -7,6 +7,8 @@ import {
   ActivationPage,
   HomePage,
   ProductsPage,
+  PostsPage,
+  BlogsPage,
   BestSellingPage,
   EventsPage,
   FAQPage,
@@ -14,6 +16,8 @@ import {
   PaymentPage,
   OrderSuccessPage,
   ProductDetailsPage,
+  PostDetailsPage,
+  BlogDetailsPage,
   ProfilePage,
   ShopCreatePage,
   SellerActivationPage,
@@ -26,8 +30,10 @@ import {
   ShopDashboardPage,
   ShopCreateProduct,
   ShopCreatePost,
+  ShopCreateBlog,
   ShopAllProducts,
   ShopAllPosts,
+  ShopAllBlogs,
   ShopCreateEvents,
   ShopAllEvents,
   ShopAllCoupouns,
@@ -45,6 +51,8 @@ import {
   AdminDashboardSellers,
   AdminDashboardOrders,
   AdminDashboardProducts,
+  AdminDashboardPosts,
+  AdminDashboardBlogs,
   AdminDashboardEvents,
   AdminDashboardWithdraw,
 } from "./routes/AdminRoutes";
@@ -58,6 +66,7 @@ import { ShopHomePage } from "./ShopRoutes.js";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import { getAllProducts } from "./redux/actions/product";
 import { getAllPosts } from "./redux/actions/post";
+import { getAllBlogs } from "./redux/actions/blog";
 import { getAllEvents } from "./redux/actions/event";
 import axios from "axios";
 import { server } from "./server";
@@ -75,6 +84,8 @@ const App = () => {
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
     Store.dispatch(getAllProducts());
+    Store.dispatch(getAllPosts());
+    Store.dispatch(getAllBlogs());
     Store.dispatch(getAllEvents());
     getStripeApikey();
   }, []);
@@ -108,7 +119,11 @@ const App = () => {
           element={<SellerActivationPage />}
         />
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/posts" element={<PostsPage />} />
+        <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/product/:id" element={<ProductDetailsPage />} />
+        <Route path="/post/:id" element={<PostDetailsPage />} />
+        <Route path="/blog/:id" element={<BlogDetailsPage />} />
         <Route path="/best-selling" element={<BestSellingPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/faq" element={<FAQPage />} />
@@ -197,6 +212,14 @@ const App = () => {
             </SellerProtectedRoute>
           }
         />
+         <Route
+          path="/dashboard-create-blog"
+          element={
+            <SellerProtectedRoute>
+              <ShopCreateBlog />
+            </SellerProtectedRoute>
+          }
+        />
         <Route
           path="/dashboard-orders"
           element={
@@ -230,11 +253,19 @@ const App = () => {
             </SellerProtectedRoute>
           }
         />
-         <Route
+        <Route
           path="/dashboard-posts"
           element={
             <SellerProtectedRoute>
               <ShopAllPosts />
+            </SellerProtectedRoute>
+          }
+        />
+         <Route
+          path="/dashboard-blogs"
+          element={
+            <SellerProtectedRoute>
+              <ShopAllBlogs />
             </SellerProtectedRoute>
           }
         />
@@ -316,6 +347,22 @@ const App = () => {
           element={
             <ProtectedAdminRoute>
               <AdminDashboardProducts />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin-posts"
+          element={
+            <ProtectedAdminRoute>
+              <AdminDashboardPosts />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin-blogs"
+          element={
+            <ProtectedAdminRoute>
+              <AdminDashboardBlogs />
             </ProtectedAdminRoute>
           }
         />

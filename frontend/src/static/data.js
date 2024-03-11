@@ -6,11 +6,15 @@ export const navItems = [
   },
   {
     title: "Feed",
-    url: "/feed",
+    url: "/posts",
+  },
+  {
+    title: "Blog",
+    url: "/blogs",
   },
   {
     title: "Shop",
-    url: "/shop",
+    url: "/products",
   },
   {
     title: "Events",
@@ -196,63 +200,63 @@ export const brandingData = [
 export const categoriesData = [
   {
     id: 1,
-    title: "BATIK",
+    title: "BATIKS",
     subTitle: "",
-    image_Url: "",
+    image_Url: "https://img.hotimg.com/Screenshot-2024-03-04-133619.png",
   },
   {
     id: 2,
-    title: "BRASS-WORK",
+    title: "BRASSWORK",
     subTitle: "",
-    image_Url: "",
+    image_Url: "https://img.hotimg.com/Screenshot-2024-03-04-140014.png",
   },
   {
     id: 3,
-    title: "HANDWOVEN-TEXTILES",
+    title: "HANDWOVEN",
     subTitle: "",
-    image_Url: "",
+    image_Url: "https://img.hotimg.com/20170426063945-1280x480.jpeg",
   },
   {
     id: 4,
     title: "POTTERY",
     subTitle: "",
-    image_Url: "",
+    image_Url: "https://img.hotimg.com/handmade-clay-pot-pitcher-tableware.jpeg",
   },
   {
     id: 5,
-    title: "WOOD-CARVINGS",
+    title: "CARVINGS",
     subTitle: "",
-    image_Url: "",
+    image_Url: "https://img.hotimg.com/Screenshot-2024-03-04-152825.png",
   },
   {
     id: 6,
     title: "CERAMIC",
     subTitle: "",
-    image_Url: "",
+    image_Url: "https://img.hotimg.com/Screenshot-2024-03-04-153013.png",
   },
   {
     id: 7,
     title: "FASHION",
     subTitle: "",
-    image_Url: "",
+    image_Url: "https://img.hotimg.com/Screenshot-2024-03-04-153805.png",
   },
   {
     id: 8,
     title: "JEWELERY",
     subTitle: "",
-    image_Url: "",
+    image_Url: "https://img.hotimg.com/Screenshot-2024-03-04-153938.png",
   },
   {
     id: 9,
     title: "PAINTINGS",
     subTitle: "",
-    image_Url: "",
+    image_Url: "https://img.hotimg.com/Screenshot-2024-03-04-154423.png",
   },
   {
     id: 10,
     title: "OTHER",
     subTitle: "",
-    image_Url: "",
+    image_Url: "https://img.hotimg.com/Screenshot-2024-03-04-154612.png",
   },
 ];
 
@@ -310,4 +314,80 @@ export const footerSupportLinks = [
   {
     name: "Live chat",
   },
+];
+
+// post Data
+export const blogData = [
+  {
+    id: 1,
+    name: "Amazon Ltd",
+    description:
+      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    image_Url: [
+      {
+        public_id: "test",
+        url: "https://img.hotimg.com/Screenshot-2024-03-04-154612.png",
+      },
+      {
+        public_id: "test",
+        url: "https://img.hotimg.com/Screenshot-2024-03-04-154612.png",
+      },
+    ],
+    shop: {
+      name: "Apple inc.",
+      shop_avatar: {
+        public_id: "test",
+        url: "https://img.hotimg.com/Screenshot-2024-03-04-154612.png",
+      },
+    },
+  },
+  {
+    id: 2,
+    name: "Amazon Ltd",
+    description:
+      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    image_Url: [
+      {
+        public_id: "test",
+        url: "ttps://img.hotimg.com/Screenshot-2024-03-04-154612.png",
+      },
+      {
+        public_id: "test",
+        url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+      },
+    ],
+    shop: {
+      name: "Amazon Ltd",
+      shop_avatar: {
+        public_id: "test",
+        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+      },
+    },
+   
+  },
+  {
+    id: 3,
+    name: "Amazon Ltd",
+    description:
+      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    image_Url: [
+      {
+        public_id: "test",
+        url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+      },
+      {
+        public_id: "test",
+        url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+      },
+    ],
+    shop: {
+      name: "Amazon Ltd",
+      shop_avatar: {
+        public_id: "test",
+        url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
+      },
+    },
+   
+  },
+ 
 ];

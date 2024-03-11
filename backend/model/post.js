@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const postSchema = new mongoose.Schema({
   description: {
     type: String,
-    required: [true, "Please enter your product description!"],
+    required: [true, "Please enter your post description!"],
   },
   images: [
     {
@@ -20,6 +20,14 @@ const postSchema = new mongoose.Schema({
   shopId: {
     type: String,
     required: true,
+  },
+  shop: {
+    type: Object,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
   },
   
 });
